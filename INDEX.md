@@ -22,6 +22,10 @@ Private 本体リポジトリのみに保管されています。
 - [anthropic-api-cost-incident-april-22.md](Knowledge/anthropic-api-cost-incident-april-22.md) - APIコスト事故記録
 - [reset-vs-no-session-language-precision.md](Knowledge/reset-vs-no-session-language-precision.md) - 「リセット済み」言葉の精度
 - [claude-code-permission-shortcut.md](Knowledge/claude-code-permission-shortcut.md) - Claude Code Permission Shortcut
+- [claude-code-large-file-instruction.md](Knowledge/claude-code-large-file-instruction.md) - 大きな指示書の渡し方
+- [claude-code-login-recovery.md](Knowledge/claude-code-login-recovery.md) - 認証エラー復旧
+- [claude-ai-memory-features-setup.md](Knowledge/claude-ai-memory-features-setup.md) - メモリー機能セットアップ
+- [project-vs-non-project-search-scope.md](Knowledge/project-vs-non-project-search-scope.md) - Project内/外の検索スコープ
 
 ### Decisions/ - 意思決定の記録（公開可能なもの）
 - [third-party-ip-policy.md](Decisions/third-party-ip-policy.md)
@@ -33,9 +37,10 @@ Private 本体リポジトリのみに保管されています。
 - [2026-04-23-3month-accompaniment-7-emails.md](Decisions/2026-04-23-3month-accompaniment-7-emails.md) - 3ヶ月伴走漸減型7回
 - [2026-04-23-team-pulse-survey-all-members.md](Decisions/2026-04-23-team-pulse-survey-all-members.md) - パルスサーベイ全員回答
 - [2026-05-12-magic-link-postponed.md](Decisions/2026-05-12-magic-link-postponed.md) - Magic LinkはMVP後
+- [2026-05-19-conversation-rules-v2.2.md](Decisions/2026-05-19-conversation-rules-v2.2.md) - 会話ルール v2.2 採用
 
 ### Preferences/ - 会話ルール・役割定義
-- [conversation-rules.md](Preferences/conversation-rules.md) - 会話ルール v2.1
+- [conversation-rules.md](Preferences/conversation-rules.md) - 会話ルール v2.2
 - [role-definition.md](Preferences/role-definition.md) - 役割定義
 
 ### ルール
