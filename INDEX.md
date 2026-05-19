@@ -27,6 +27,7 @@ Private 本体リポジトリのみに保管されています。
 - [claude-ai-memory-features-setup.md](Knowledge/claude-ai-memory-features-setup.md) - メモリー機能セットアップ
 - [project-vs-non-project-search-scope.md](Knowledge/project-vs-non-project-search-scope.md) - Project内/外の検索スコープ
 - [instruction-delivery-method.md](Knowledge/instruction-delivery-method.md) - 指示書のサイズ別渡し方
+- [claude-ai-project-instructions-management.md](Knowledge/claude-ai-project-instructions-management.md) - Project「手順」管理
 
 ### Decisions/ - 意思決定の記録（公開可能なもの）
 - [third-party-ip-policy.md](Decisions/third-party-ip-policy.md)
