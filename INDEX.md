@@ -8,11 +8,6 @@ Private 本体リポジトリのみに保管されています。
 
 ## 構成
 
-### philosophy/ - 全判断の土台
-- [whi-philosophy.md](philosophy/whi-philosophy.md) - WHIフィロソフィー完全版
-- [tone-and-expression.md](philosophy/tone-and-expression.md) - トーン・表現原則
-- [report-design-principles.md](philosophy/report-design-principles.md) - レポート設計原則
-
 ### Knowledge/ - 技術知識・落とし穴
 - [mistakes.md](Knowledge/mistakes.md) - 再発防止の核
 - [build-pass-not-runtime-ok.md](Knowledge/build-pass-not-runtime-ok.md)
