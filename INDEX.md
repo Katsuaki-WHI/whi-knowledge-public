@@ -8,6 +8,12 @@ Private 本体リポジトリのみに保管されています。
 
 ## 構成
 
+### philosophy/ - 全判断の土台（Privateのみ保管）
+WHIフィロソフィーは Project手順本文（claude.ai用）と
+Private版 ~/whi-knowledge/philosophy/（Claude Code用）の2箇所に同内容で保管。
+Public版には公開しない。
+唯一の正は Project手順本文。詳細は Decisions/whi-philosophy-single-source-of-truth.md 参照。
+
 ### Knowledge/ - 技術知識・落とし穴
 - [mistakes.md](Knowledge/mistakes.md) - 再発防止の核
 - [build-pass-not-runtime-ok.md](Knowledge/build-pass-not-runtime-ok.md)
