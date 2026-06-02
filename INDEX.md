@@ -47,6 +47,7 @@ Public版には公開しない。
 - [2026-04-23-team-pulse-survey-all-members.md](Decisions/2026-04-23-team-pulse-survey-all-members.md) - パルスサーベイ全員回答
 - [2026-05-12-magic-link-postponed.md](Decisions/2026-05-12-magic-link-postponed.md) - Magic LinkはMVP後
 - [2026-05-19-conversation-rules-v2.2.md](Decisions/2026-05-19-conversation-rules-v2.2.md) - 会話ルール v2.2 採用
+- [2026-06-02-report-as-coaching-dialogue.md](Decisions/2026-06-02-report-as-coaching-dialogue.md) - レポートは診断でなく対話の出発点（抽象原則のみ・具体は非公開）
 
 ### Preferences/ - 会話ルール・役割定義
 - [conversation-rules.md](Preferences/conversation-rules.md) - 会話ルール v2.2
