@@ -36,6 +36,7 @@ Public版には公開しない。
 - [instruction-delivery-method.md](Knowledge/instruction-delivery-method.md) - 指示書のサイズ別渡し方
 - [claude-ai-project-instructions-management.md](Knowledge/claude-ai-project-instructions-management.md) - Project「手順」管理
 - [resend-local-vs-prod-key.md](Knowledge/resend-local-vs-prod-key.md) - ローカルResendキーは本番と別物・メール実物確認は送信ゼロ捕捉で
+- [ai-tool-use-double-encoding-defensive-parse.md](Knowledge/ai-tool-use-double-encoding-defensive-parse.md) - AI Tool Useが章をJSON文字列で返す二重エンコード→検証なし保存→表示クラッシュ。防御的パース＋全章型検証＋無効JSONは再生成のみ。併記:サーバー間fetchはCookie非転送で内部API認証403
 
 ### Decisions/ - 意思決定の記録（公開可能なもの）
 - [third-party-ip-policy.md](Decisions/third-party-ip-policy.md)
