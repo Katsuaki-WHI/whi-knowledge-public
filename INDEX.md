@@ -16,6 +16,7 @@ Public版には公開しない。
 
 ### Knowledge/ - 技術知識・落とし穴
 - [mistakes.md](Knowledge/mistakes.md) - 再発防止の核
+- [local-review-flow.md](Knowledge/local-review-flow.md) - ローカル確認の標準フロー（dev起動維持→URL1行提示→ユーザー確認→push）
 - [build-pass-not-runtime-ok.md](Knowledge/build-pass-not-runtime-ok.md)
 - [vercel-deploy-tips.md](Knowledge/vercel-deploy-tips.md)
 - [api-cost-management.md](Knowledge/api-cost-management.md)
