@@ -56,6 +56,7 @@ Public版には公開しない。
 ### Preferences/ - 会話ルール・役割定義
 - [conversation-rules.md](Preferences/conversation-rules.md) - 会話ルール v2.2
 - [role-definition.md](Preferences/role-definition.md) - 役割定義
+- [document-versioning.md](Preferences/document-versioning.md) - 読み物・ドキュメントのバージョン管理ルール（改訂時に版番号付与・ファイル名にも入れる・系統別番号体系・対応関係を記録）
 
 ### ルール
 - [AI-RULES.md](AI-RULES.md) - AIが知識ベースをどう扱うかのルール
