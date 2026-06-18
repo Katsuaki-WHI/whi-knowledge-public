@@ -40,6 +40,7 @@ Public版には公開しない。
 - [stripe-price-change-procedure.md](Knowledge/stripe-price-change-procedure.md) - Stripe価格変更手順(Price金額は編集不可・新Price作成→デフォルト→旧アーカイブ→price_id差替→pricing.ts更新→実機で表示=請求一致確認)。表示だけ変えると不当表示
 - [nakama-english-style-guide.md](Knowledge/nakama-english-style-guide.md) - なかまクエスト英語表記ガイド(ゲーム・Web共通正本)。King Leo/Magic Recipe/Warrior等/禁止語(Lion King・Sensei Conlan・古語・comrade)。型名The Sensei(CS)は別レイヤー
 - [infra-before-production-launch.md](Knowledge/infra-before-production-launch.md) - 本番公開前に必須のインフラ確認（Vercel無料は非商用専用・上限超過で停止／Supabase無料は7日で自動停止・バックアップなし／公開予定が立ったら先に有料化）
+- [dark-mode-fixed-background-contrast.md](Knowledge/dark-mode-fixed-background-contrast.md) - 背景固定（テーマトークン）のレポート系コンポーネントに dark:text-* を付けると、ダークモード端末で背景は反転せず文字だけ反転しコントラスト不足で読めなくなる。dark: を持たない固定文字色トークンを使う
 
 ### Decisions/ - 意思決定の記録（公開可能なもの）
 - [third-party-ip-policy.md](Decisions/third-party-ip-policy.md)
