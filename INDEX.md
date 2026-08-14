@@ -16,6 +16,7 @@ Public版には公開しない。
 
 ### Knowledge/ - 技術知識・落とし穴
 - [mistakes.md](Knowledge/mistakes.md) - 再発防止の核
+- [jsonb-selection-backward-compat-new-axis.md](Knowledge/jsonb-selection-backward-compat-new-axis.md) - jsonbの設定オブジェクトにキーを追記するだけで軸/条件を1つ増やす＝DB変更(DDL)・移行なしの後方互換。要＝**既存レコードは新キーを持たない→読み取り側で「欠如なら既定値(旧来の意味)とみなす」1行で吸収**＝移行不要・既存結果不変。新キーは任意/欠如は既定に倒す/jsonbはオブジェクトそのまま渡す(JSON.stringify禁止)。前提＝検索集計をアプリ側でやる構造
 - [resend-scheduled-email-30day-limit.md](Knowledge/resend-scheduled-email-30day-limit.md) - Resendの予約送信は**30日先まで**が上限（公式明記）・超過時の挙動は未文書化→防御的に「APIエラー前提」で扱う。「開始時に全通を一括予約」は全配信が30日内のときだけ成立・数ヶ月〜1年先は定期実行(cron)で拾う
 - [ai-prompt-global-rule-and-bilingual-qa.md](Knowledge/ai-prompt-global-rule-and-bilingual-qa.md) - AIプロンプト2教訓。①全体ルール（書式・禁止・必須）は**後から足す別用途フィールドにも適用**される→用途が違うフィールドは明示的な例外指定が必要。②生成品質は**全言語で実物を読む**まで完了にしない（同じプロンプトでも言語で出方が変わる・1言語だけだと見落とす）
 - [tool-use-schema-flattening.md](Knowledge/tool-use-schema-flattening.md) - Tool Useスキーマで「1項目だけのオブジェクト」を作らない。単一bodyセクションを{"body":…}のJSON文字列＋余分な}で二重エンコード誤生成しinvalid tool_use jsonで失敗→プレーン文字列にフラット化すると解消。文字列にできるものは文字列に。併記=Next.js/Vercelで作業ブランチpushはPreview・env無しでビルド失敗・本番反映はmainへff push
