@@ -16,6 +16,7 @@ Public版には公開しない。
 
 ### Knowledge/ - 技術知識・落とし穴
 - [mistakes.md](Knowledge/mistakes.md) - 再発防止の核
+- [tool-use-schema-flattening.md](Knowledge/tool-use-schema-flattening.md) - Tool Useスキーマで「1項目だけのオブジェクト」を作らない。単一bodyセクションを{"body":…}のJSON文字列＋余分な}で二重エンコード誤生成しinvalid tool_use jsonで失敗→プレーン文字列にフラット化すると解消。文字列にできるものは文字列に。併記=Next.js/Vercelで作業ブランチpushはPreview・env無しでビルド失敗・本番反映はmainへff push
 - [local-review-flow.md](Knowledge/local-review-flow.md) - ローカル確認の標準フロー（dev起動維持→URL1行提示→ユーザー確認→push）
 - [build-pass-not-runtime-ok.md](Knowledge/build-pass-not-runtime-ok.md)
 - [vercel-deploy-tips.md](Knowledge/vercel-deploy-tips.md)
