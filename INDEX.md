@@ -36,6 +36,7 @@ Public版には公開しない。
 - [legacy-data-compatibility-check.md](Knowledge/legacy-data-compatibility-check.md) - 既存レコード後方互換性
 - [anthropic-api-cost-incident-april-22.md](Knowledge/anthropic-api-cost-incident-april-22.md) - APIコスト事故記録
 - [reset-vs-no-session-language-precision.md](Knowledge/reset-vs-no-session-language-precision.md) - 「リセット済み」言葉の精度
+- [claude-md-size-limit.md](Knowledge/claude-md-size-limit.md) - CLAUDE.md は約15万字が上限。超えると後半（未処理タスク・絶対ルール・最近の記録）が読まれない。エラーは出ない。運用＝直近2週間だけ残し古い記録は archive へ移動／15万字を超えない／判断の本体は Decisions に置き CLAUDE.md は索引にする
 - [claude-code-permission-shortcut.md](Knowledge/claude-code-permission-shortcut.md) - Claude Code Permission Shortcut
 - [claude-code-large-file-instruction.md](Knowledge/claude-code-large-file-instruction.md) - 大きな指示書の渡し方
 - [claude-code-login-recovery.md](Knowledge/claude-code-login-recovery.md) - 認証エラー復旧
