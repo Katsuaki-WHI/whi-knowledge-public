@@ -28,7 +28,8 @@ Public版には公開しない。
 - [build-pass-not-runtime-ok.md](Knowledge/build-pass-not-runtime-ok.md)
 - [non-fatal-write-failure-and-column-mismatch.md](Knowledge/non-fatal-write-failure-and-column-mismatch.md) - **握り潰した失敗は画面にもログにも出ない**／DBに書く・読む列名は実DBと機械的に突合する。実例1（書き込み）=存在しない列を渡す upsert が毎回42703で失敗し**対象15件すべてが0行**なのに画面は正常で誰も気づかなかった（呼び出し側が console.error だけで return null を省略＝non-fatal）。★戻り値が Record<string,unknown> のため **tsc/build は両方PASS＝型チェックは列の実在を検知しない**。実例2（読み取り・同日）=`week, type` を select（実列 `week_number, schedule_type`）→ 42703 で**一覧表が一度も表示されていなかった**。`const { data } = await` で**error を分割代入で捨てており痕跡すら残らない**。★**共通点＝症状が「何も無い」**（0行／表が出ない）で、**壊れている状態と正常な空が区別できない**。突合は読み取りだけでできる（実列=select("*")のキー／存在確認=select("<列名>")の42703）。★直す前に同じ突合を他の書き込み・読み取りにも回して**範囲を確定**する。関連=[[select-column-mismatch-audit]]・[[build-pass-not-runtime-ok]]
 - [select-column-mismatch-audit.md](Knowledge/select-column-mismatch-audit.md) - **読み取りの列名不一致も気づかれない**（書き込み側 non-fatal-write-failure と対）。症状が違う＝書き込みは「データが入らない」・読み取りは**「表が丸ごと出ない」**で空データと見分けがつかない。★tsc/build は列の実在を検知しない（select は文字列・行の型は Record<string,unknown>）。突合は読み取りだけで全件できる＝コードから `.from("X").select("...")` を正規表現で抜き、そのまま実DBへ .limit(1) で投げてエラーの有無を見る（データ不変）。**1ファイル全52件を突合し不一致は1件**と範囲を確定してから直した実績。チェックリスト5点（直す前に全件突合／error を捨てない／「0件・表が出ない」はまず列名を疑う／列名変更時は読む側を grep／実DBに投げるまで分からない）。
-- [vercel-deploy-tips.md](Knowledge/vercel-deploy-tips.md)
+- [vercel-deploy-tips.md](Knowledge/vercel-deploy-tips.md) - 自動デプロイ不発時は空コミット／★Vercel CLI の一覧は commit sha を出さない＝どの commit が本番に載ったかは `vercel inspect --logs` の `Commit:` 行で照合する
+- [supabase-rls-warning-false-positive.md](Knowledge/supabase-rls-warning-false-positive.md) - Supabase SQL Editor の「Potential issue detected（RLS）」は INSERT/UPDATE/列追加でも出る＝多くは誤検知。警告の有無でなく SQL の中身で判断する（`disable row level security`／`drop policy`／`create policy ... using (true)`／`grant ... to anon` が無ければ RLS は変わらない）。確かめ方＝実行前後で `pg_policies` と `pg_class.relrowsecurity` を比べ変化なしを示す
 - [api-cost-management.md](Knowledge/api-cost-management.md)
 - [nakama-quest-visibility-rules.md](Knowledge/nakama-quest-visibility-rules.md)
 - [ai-report-3files-sync.md](Knowledge/ai-report-3files-sync.md)
@@ -52,6 +53,7 @@ Public版には公開しない。
 - [nakama-english-style-guide.md](Knowledge/nakama-english-style-guide.md) - なかまクエスト英語表記ガイド(ゲーム・Web共通正本)。King Leo/Magic Recipe/Warrior等/禁止語(Lion King・Sensei Conlan・古語・comrade)。型名The Sensei(CS)は別レイヤー
 - [nakama-admin-i18n-inline-debt.md](Knowledge/nakama-admin-i18n-inline-debt.md) - なかまWHI Adminの言語方式はinline三項分岐(辞書方式でない技術的負債)。SQW Admin実装時に「SQWは辞書方式＋なかまAdminの辞書化」をセットで行う確定タスク。辞書キーは関数でなく文字列＋プレースホルダー
 - [infra-before-production-launch.md](Knowledge/infra-before-production-launch.md) - 本番公開前に必須のインフラ確認（Vercel無料は非商用専用・上限超過で停止／Supabase無料は7日で自動停止・バックアップなし／公開予定が立ったら先に有料化）
+- [overflow-x-hidden-breaks-sticky.md](Knowledge/overflow-x-hidden-breaks-sticky.md) - **`overflow-x: hidden` は `position: sticky` を無効化する**（片方の軸だけ hidden にすると もう片方の visible が auto に計算され、html/body 自身がスクロール枠になるため sticky が実質 static になる）。見分け方＝`getComputedStyle(document.body).overflowY` が auto/scroll。直し方＝①overflow-x を外す ②外せないならその要素だけ `position: fixed`（余白は決め打ちにせず ResizeObserver で実測）③`overflow-x: clip` はスクロール枠を作らないので sticky が生きる。★「別プロダクトで動くからこちらも動くはず」と考えない（同じCSSでも globals.css の overflow 指定の有無で結果が変わる）
 - [dark-mode-fixed-background-contrast.md](Knowledge/dark-mode-fixed-background-contrast.md) - 背景固定（テーマトークン）のレポート系コンポーネントに dark:text-* を付けると、ダークモード端末で背景は反転せず文字だけ反転しコントラスト不足で読めなくなる。dark: を持たない固定文字色トークンを使う
 
 ### Decisions/ - 意思決定の記録（公開可能なもの）
