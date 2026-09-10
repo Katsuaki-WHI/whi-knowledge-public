@@ -7,7 +7,7 @@ related: [[i18n-strategy]], [[third-party-ip-policy]]
 
 # なかまクエスト 英語表記ガイド（ゲーム・Web 共通の正本）
 
-ゲーム（Unity 版・DWAI マスター xlsx）・Web 版・メール・マーケ文言**すべて**に適用する英語表記の正本。
+ゲーム（Unity 版・ゲーム側マスター xlsx）・Web 版・メール・マーケ文言**すべて**に適用する英語表記の正本。
 日本語版（テストマーケット）と英語版（メイン市場）は別戦略だが、本ガイドは英語表記の統一基準。
 
 ## キャラクター名
@@ -51,5 +51,5 @@ related: [[i18n-strategy]], [[third-party-ip-policy]]
   **王様 King Leo とは別レイヤー**。"Sensei" を廃止したのは王様名のみで、型名 The Sensei は保持。
 
 ## 適用範囲
-- Unity 版ゲーム（DWAI マスター xlsx）／Web 版／メール／マーケ文言すべて。
+- Unity 版ゲーム（ゲーム側マスター xlsx）／Web 版／メール／マーケ文言すべて。
 - ゲームと Web は同一キャラ・同一名称で物語を接続する（ゲームで King Leo から Magic Recipe を受け取る連続性）。
