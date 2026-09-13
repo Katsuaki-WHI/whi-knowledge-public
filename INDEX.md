@@ -16,6 +16,7 @@ Public版には公開しない。
 
 ### Knowledge/ - 技術知識・落とし穴
 - [mistakes.md](Knowledge/mistakes.md) - 再発防止の核
+- [repair-impact-is-every-reader-not-the-row.md](Knowledge/repair-impact-is-every-reader-not-the-row.md) - データ修復の影響範囲は「直す行の数」でなく「その値を読んでいる全ての計算」で数える。個人の値を合算した集団の指標は1人直すと全員の画面が変わる。固めてある部分と毎回計算する部分を先に分ける
 - [placeholder-values-break-when-premise-changes.md](Knowledge/placeholder-values-break-when-premise-changes.md) - 合計が固定の配分どうしを比べる前提を作ったら、全経路で合計が揃っているか点検する。仮の値が混ざると見た目は壊れず判定だけが歪む。合計でなく値の「形」で見分ける
 - [gap-display-axis-priority.md](Knowledge/gap-display-axis-priority.md) - 2つの見方を並べて差を見せる画面で「どの項目について語るか」は、目立ちやすさでなく画面の目的で決める。優先順位を変える前に各型の出現率を実測する。締めの言葉も型ごとに変える
 - [disclosure-in-flex-heading.md](Knowledge/disclosure-in-flex-heading.md) - **「？」で開く折りたたみ部品を、横1行（flex）の見出しに置くと、本文が「？」の右に入り込んで見出しのほうが縦に潰れる**（実測：狭い幅で見出しが4行に折り返し）。原因＝部品がボタンと本文を**兄弟で返す**ため、呼び出し側が flex だと**本文もその行の flex アイテムになり**、既定の `nowrap` で次の行へ逃げられない。**同じ部品でも flex でない呼び出し元では正しく下に出る**ので、片方の画面だけ壊れて見え原因が部品側だと気づきにくい。直し方は**2つセット**＝(a) 本文に `flex-basis:100%`（＋`width:100%`）(b) 呼び出し側の見出しに `flex-wrap:wrap`（**wrap が無いと `flex-basis:100%` は改行を起こさない**）。flex でない呼び出し元では `flex-basis` は無視＝既に正しい場所を壊さずに直せる。あわせて＝本文の**太さを明示**（見出しの太字を継承する）／**`<p>` の入れ子を作らない**（SSRで開いた状態を描くとハイドレーションのずれ）／`aria-expanded`+`aria-controls`・**Enter と Space を実際に押して確認**。★検証＝「押したら開く」で終わらせず、**本文の矩形がボタンの下端より下にあるか**を実測し、**同じ部品の全呼び出し元**で確認する。一般化＝**折りたたみ部品は「本文がどこに出るか」を部品側で保証する**。
