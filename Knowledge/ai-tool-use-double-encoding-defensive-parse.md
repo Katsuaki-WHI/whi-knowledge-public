@@ -7,7 +7,7 @@ related: [[mistakes]], [[4-level-verification-protocol]], [[rsc-marshalling-viol
 
 # AI Tool Use出力の二重エンコード問題と防御的パース／サーバー間fetchのCookie落とし穴
 
-## 事象（2026-06-11・しののん事象）
+## 事象（2026-06-11・二重エンコード事象）
 なかまクエストで「ベーシック・GLBは出るのに冒険バイブルだけ表示されず、管理画面から再生成もできない」。
 調査の結果、独立した3つの問題が重なっていた。
 

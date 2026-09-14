@@ -16,6 +16,9 @@ Public版には公開しない。
 
 ### Knowledge/ - 技術知識・落とし穴
 - [mistakes.md](Knowledge/mistakes.md) - 再発防止の核
+- [verify-facts-not-sentences.md](Knowledge/verify-facts-not-sentences.md) - AI生成レポートの整合は「文の一致」でなく「事実の一致」で担保する。画面の文を写させる方式は3つの理由で行き詰まる（同じ文のコピーは無価値／禁止語と必須事項が増え続ける／合否の線が引けない）。事実を「■項目：値」で渡し、出力に渡した値をそのまま返す構造項目を足し、保存前に突き合わせる。材料にその語を入れなければ禁じる必要もない＝言葉で縛らず構造で防ぐ
+- [one-field-one-role.md](Knowledge/one-field-one-role.md) - 同じ欄に2つの役割を持たせない。言葉で縛る前に欄を分ける。7通りの言い方（型の明記・完成文を渡す・囲みで強調・自己チェック・末尾に置く・理由を添える・禁止語の名指し＝悪化）は効かず、出力スキーマに専用欄を足したら言い方を強めずに通った。「残りはすべて」と書くと隣の欄が空になる（片方の言語でだけ出ることがある）
+- [forbid-narrowly-by-name.md](Knowledge/forbid-narrowly-by-name.md) - 禁止語は名指しで狭く書く。広い言葉で禁じると意図しない範囲まで消える（4つの呼び名を禁じたら別の21種類まで消えた）。毎回でなくぶれるので1回の生成では見つからない。「出ている」と「必ず出る」は違う＝消えたらまず必須にしていたかを確かめる
 - [repair-impact-is-every-reader-not-the-row.md](Knowledge/repair-impact-is-every-reader-not-the-row.md) - データ修復の影響範囲は「直す行の数」でなく「その値を読んでいる全ての計算」で数える。個人の値を合算した集団の指標は1人直すと全員の画面が変わる。固めてある部分と毎回計算する部分を先に分ける
 - [placeholder-values-break-when-premise-changes.md](Knowledge/placeholder-values-break-when-premise-changes.md) - 合計が固定の配分どうしを比べる前提を作ったら、全経路で合計が揃っているか点検する。仮の値が混ざると見た目は壊れず判定だけが歪む。合計でなく値の「形」で見分ける
 - [no-controls-directly-on-gradient.md](Knowledge/no-controls-directly-on-gradient.md) - グラデーション背景の上にボタン・選択肢・小さな文字を直置きしない。ページが下に伸びると淡色側で背景と同化する。影はコントラストを作らない。コントラスト比は描画ピクセルで測る
