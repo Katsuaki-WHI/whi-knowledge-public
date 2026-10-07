@@ -15,6 +15,7 @@ Public版には公開しない。
 唯一の正は Project手順本文。詳細は Decisions/whi-philosophy-single-source-of-truth.md 参照。
 
 ### Knowledge/ - 技術知識・落とし穴
+- [measure-before-you-fix.md](Knowledge/measure-before-you-fix.md) - 「直す」前に全数で数える（直すものが0件のこともある）。0件でも検査に入れて「明日からの約束」にする／分類器は名前だけで信用しない（鍵の作り方は4通り）／分類できない行が出たらコードより先に分類器を疑う／副産物（動いていないコードが最後の anon を抱えていた）は判断に出す
 - [head-request-hides-the-error-code.md](Knowledge/head-request-hides-the-error-code.md) - `head: true`（HEAD リクエスト）は本文を返さないので PostgREST のエラー code が受け取れない（PGRST205 も 42501 も空で返り、閉じているのに「読めてしまう」と出る）。「無い／読めない」の確認は本文の返る GET で見る／件数だけなら head のままでよい＝分けて使う
 - [before-dropping-a-backup-table.md](Knowledge/before-dropping-a-backup-table.md) - バックアップ表を消す前に何を数えるか（行＝主キーで無い行／値＝列ごとに数える・★値が違うのは「壊れている」でなく「直した」ことがある／その値が他に残っていないか／一致しないなら削除 SQL を作らない／「戻す」SQL を作らない／照合の件数を SQL の先頭に焼き込む）＋★消す SQL の検査で必ず通す5つ（元の表を巻き込んでいない／冪等／CASCADE 無しと依存で止まることの実演）と、そこで踏んだ3つ（コメントごと数えて自分の注意書きに当たった ほか）
 - [rls-four-stages-done-check.md](Knowledge/rls-four-stages-done-check.md) - RLS を掛け終えたあと何をもって「閉じた」と言うか（外から実際に叩く／全表を叩き「200 だが0行」を空と RLS で分ける／同じ中身が出ていることを長さで示す／開くと書く画面を避ける／★鍵だけでなく「表」も写さずコードから読む／片付けまでが④）
