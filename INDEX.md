@@ -125,6 +125,27 @@ Public版には公開しない。
 - [compare-instruction-strength-across-languages.md](Knowledge/compare-instruction-strength-across-languages.md) — 英語版を別に生成するなら、材料の指示の強さを日英で「並べて」確かめる／同じ設計でも、言語ごとに別のプロンプトで書かせているなら、出来上がりは別々に劣化する。
 - [normalize-in-code-not-in-the-prompt.md](Knowledge/normalize-in-code-not-in-the-prompt.md) — 意味が同じで形だけ違うものは、AIに守らせ続けるのでなく、コードでそろえる／「この形で書いて」と頼んで守られないとき、頼み方を強めるより、あとから整えるほうが安くて確実。
 - [single-source-unlock-judgment-rpc.md](Knowledge/single-source-unlock-judgment-rpc.md) — 同じ判定を2箇所で実装すると粒度がズレる。解錠判定は RPC 1本に寄せ、他は必ずそれを呼ぶ／「購入済みか」「解錠されているか」のような同じ意味の判定を、複数の場所でそれぞれ実装しない。
+★**ここから下は 2026-10-24 手70 に足した（★Private の INDEX の行をそのまま）**
+
+- [double-submit-and-duplicate-registration.md](Knowledge/double-submit-and-duplicate-registration.md) — 【Public可・★送信/登録の口を作るときまず読む】★★二重送信と重複登録の守り（旧SQWの事例・2026-10-16 共有）。
+- [long-task-step-by-step.md](Knowledge/long-task-step-by-step.md) — 【Public可】長い作業は「1回の返答を短く・1手ずつ止まる」。
+- [edge-call-limits-margin-absolute.md](Knowledge/edge-call-limits-margin-absolute.md) — 【Public可】検査の「余白」は倍率でなく絶対値で持つ（壁が動かないとき）。
+- [no-variance-guard-and-band-rounding.md](Knowledge/no-variance-guard-and-band-rounding.md) — 【Public可】「差が無い」を `=== 0` で見ない／段階は丸めたあとの数から決める。
+- [shared-knowledge-base-concurrent-commits.md](Knowledge/shared-knowledge-base-concurrent-commits.md) — 【Public可】共有の知識ベースは同時に触られている＝`git add .` は他のセッションの作業途中を巻き込む。
+- [preview-db-is-not-a-copy-of-production.md](Knowledge/preview-db-is-not-a-copy-of-production.md) — 【Public可】検証用・プレビュー用のDBは「本番の写し」とは限らない。
+- [sync-the-outside-first-then-save.md](Knowledge/sync-the-outside-first-then-save.md) — 【Public可】外の相手と値を揃える処理は「外を先に・自分の保存は後」。
+- [one-loop-three-places.md](Knowledge/one-loop-three-places.md) — 【Public可】同じ手順が3箇所に写してあるとき、違うのは1〜2点しかない。
+- [killed-runtime-skips-catch.md](Knowledge/killed-runtime-skips-catch.md) — 【Public可】打ち切られた実行では catch が走らない＝ジョブは「作っている最中」のまま残る。
+- [move-the-assembly-not-the-runner.md](Knowledge/move-the-assembly-not-the-runner.md) — 【Public可】★★走らせる側を触らずに、組み立てだけを変える（新しい版をデプロイなしで流す）。
+- [read-every-tool-use-block.md](Knowledge/read-every-tool-use-block.md) — 【Public可】`tool_use` は1つとは限らない。
+- [decide-in-a-pure-function-send-outside.md](Knowledge/decide-in-a-pure-function-send-outside.md) — 【Public可】定期通知は「送るかどうか」を純粋な関数に切り出す。
+- [show-the-secret-once-and-mean-it.md](Knowledge/show-the-secret-once-and-mean-it.md) — 【Public可】鍵を「1度だけ見せる」と決めたら、自分も渡せなくなる。
+- [dont-waste-the-first-call-to-set-up-the-second.md](Knowledge/dont-waste-the-first-call-to-set-up-the-second.md) — 【Public可】モデルを比べるとき、1回目を「材料づくり」に使わない。
+- [as-cast-silences-the-type-check.md](Knowledge/as-cast-silences-the-type-check.md) — 【Public可・★DB・Server Action の戻り値から欄を1つ取り出すときに読む】`as` のキャストは型の検査を黙らせる＝欄の綴りが違っても tsc が黙り、「いつも null → いつも false」になる。
+- [nearest-is-not-next.md](Knowledge/nearest-is-not-next.md) — 【Public可】AIに「いちばん近いもの」を選ばせると、同じところを回り続ける。
+- [overflow-hidden-clips-dropdown-menus.md](Knowledge/overflow-hidden-clips-dropdown-menus.md) — 【Public可】角丸カードの `overflow: hidden` は、中の absolute なドロップダウンも切り落とす（症状＝一覧の下の行だけメニューが見えず操作できない・上の行では開くので気づかれにくい）。
+- [server-step-state-not-client-state.md](Knowledge/server-step-state-not-client-state.md) — 複数回のやり取りにまたがる段取りは、画面の状態でなくサーバーの状態に持つ／【Public可】
+
 ### Decisions/ - 意思決定の記録（公開可能なもの）
 - [third-party-ip-policy.md](Decisions/third-party-ip-policy.md)
 - [i18n-strategy.md](Decisions/i18n-strategy.md)
