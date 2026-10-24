@@ -119,6 +119,12 @@ Public版には公開しない。
 - [dark-mode-fixed-background-contrast.md](Knowledge/dark-mode-fixed-background-contrast.md) — 背景固定（テーマトークン）のレポート系コンポーネントに dark:text-* を付けると、ダークモード端末で背景は反転せず文字だけ反転しコントラスト不足で読めなくなる。
 - [edge-lifetime-from-measurement.md](Knowledge/edge-lifetime-from-measurement.md) — サーバーレスの寿命は「公式」でなく「実測」で決める／作り直しは別の実行にする。
 
+
+★**ここから下は 2026-10-24 手67 に足した（★索引に無かったもの・本体の冒頭からの抜き書き）**
+
+- [compare-instruction-strength-across-languages.md](Knowledge/compare-instruction-strength-across-languages.md) — 英語版を別に生成するなら、材料の指示の強さを日英で「並べて」確かめる／同じ設計でも、言語ごとに別のプロンプトで書かせているなら、出来上がりは別々に劣化する。
+- [normalize-in-code-not-in-the-prompt.md](Knowledge/normalize-in-code-not-in-the-prompt.md) — 意味が同じで形だけ違うものは、AIに守らせ続けるのでなく、コードでそろえる／「この形で書いて」と頼んで守られないとき、頼み方を強めるより、あとから整えるほうが安くて確実。
+- [single-source-unlock-judgment-rpc.md](Knowledge/single-source-unlock-judgment-rpc.md) — 同じ判定を2箇所で実装すると粒度がズレる。解錠判定は RPC 1本に寄せ、他は必ずそれを呼ぶ／「購入済みか」「解錠されているか」のような同じ意味の判定を、複数の場所でそれぞれ実装しない。
 ### Decisions/ - 意思決定の記録（公開可能なもの）
 - [third-party-ip-policy.md](Decisions/third-party-ip-policy.md)
 - [i18n-strategy.md](Decisions/i18n-strategy.md)
@@ -135,6 +141,13 @@ Public版には公開しない。
 - [2026-10-04-unlimited-plan-structure.md](Decisions/2026-10-04-unlimited-plan-structure.md) — 使いたい放題プランの設計（構造だけ・金額は非公開）。
 - [2026-09-19-paid-report-design-principles.md](Decisions/2026-09-19-paid-report-design-principles.md) — 有料レポートの設計原則（試作で確定・一般化版／製品固有の設問構成・データ規模・価格は非公開）。
 
+
+★**ここから下は 2026-10-24 手67 に足した（★索引に無かったもの・本体の冒頭からの抜き書き）**
+
+- [2026-05-30-prescription-dictionary-lessons.md](Decisions/2026-05-30-prescription-dictionary-lessons.md) — レポートに「次の一歩」を添える処方ディクショナリーの設計（一般化教訓）／組織サーベイのレポートを読んだ人の「で、次どうすれば?」という空白を、方向性として
+- [2026-05-30-sqw-segment-analysis-lessons.md](Decisions/2026-05-30-sqw-segment-analysis-lessons.md) — サーベイのセグメント分析から得た一般化できる教訓／組織サーベイの大規模データ（10万人規模）を、全体だけでなくセグメント
+- [2026-06-15-production-infra-paid-upgrade.md](Decisions/2026-06-15-production-infra-paid-upgrade.md) — 本番リリースに伴うインフラ有料化（Vercel / Supabase）／なかまクエスト本番アプリ公開に合わせ、VercelとSupabaseを無料プランから
+- [2026-06-15-ringi-draft-infra.md](Decisions/2026-06-15-ringi-draft-infra.md) — 稟議書ドラフト全文：Vercel / Supabase 有料プラン契約（2026-06-15提出予定）／決定の背景・根拠は related の 2026-06-15-production-infra-…
 ### Preferences/ - 会話ルール・役割定義
 - [conversation-rules.md](Preferences/conversation-rules.md) — 会話ルール v2.2
 - [role-definition.md](Preferences/role-definition.md) — 役割定義
